@@ -1,266 +1,265 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Web Brothers — דפי נחיתה מודרניים תוך 48 שעות</title>
-  <meta name="description" content="Web Brothers: בניית דפי נחיתה מעוצבים לעסקים — תוך 48 שעות. עיצוב נקי, ביצועים מעולים וקריאה לפעולה חדה.">
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>כהן & נוימן — משרד עורכי דין</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&display=swap" rel="stylesheet" />
   <style>
-    :root{
-      --bg:#ffffff; --ink:#0b0b0c; --muted:#6b7280; --line:#eceff3; --card:#f8fafc;
-      --accent:#0b84ff; --accent2:#0a66ff; --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.06);
+    :root {
+      --dark: #0a1a2f;
+      --light: #ffffff;
+      --gold: #c6a75b;
+      --gray: #6b7280;
+      --line: #e5e7eb;
+      --radius: 16px;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0; font-family:Heebo,system-ui,Arial; background:var(--bg); color:var(--ink);
-      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; line-height:1.6;
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Heebo', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1150px;margin:0 auto;padding-inline:20px}
-    /* Nav */
-    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.75);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)}
-    .nav-inner{height:64px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.3px}
-    .logo{inline-size:34px;block-size:34px;border-radius:10px;background: radial-gradient(120% 120% at 70% 10%, #cde7ff 0%, #eaf2ff 40%, #fff 60%);border:1px solid var(--line);box-shadow:var(--shadow)}
-    .links{display:flex;gap:22px}
-    .links a{color:#3b3f45;font-weight:600}
-    .cta{display:inline-flex;align-items:center;gap:10px;background:#111;color:#fff;padding:.65rem 1rem;border-radius:999px;font-weight:700;transition:transform .2s ease, opacity .2s ease}
-    .cta:hover{transform:translateY(-1px);opacity:.95}
-    /* Hero */
-    .hero{padding:90px 0 50px}
-    .badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.35rem .7rem;color:#475569;background:#fff}
-    h1{font-size:clamp(32px,5vw,56px);line-height:1.12;margin:10px 0;letter-spacing:-.7px}
-    .sub{max-width:760px;margin:0 auto 26px;color:var(--muted);font-size:clamp(16px,2.2vw,18px)}
-    .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;font-weight:700;border:1px solid var(--line);padding:.9rem 1.25rem;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
-    .btn.primary{background:#111;color:#fff;border-color:#111}
-    .btn.primary:hover{transform:translateY(-1px)}
-    .btn.ghost{background:#fff}
-    /* Showcase */
-    .showcase{margin-top:34px;border:1px solid var(--line);border-radius:calc(var(--radius)+6px);padding:14px;background:linear-gradient(180deg,#fcfdff,#f7f9ff 45%,#ffffff 100%);box-shadow:var(--shadow)}
-    .window{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
-    .window-top{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid var(--line);background:#fafbff}
-    .dot{inline-size:10px;block-size:10px;border-radius:999px}.r{background:#ff5f57}.y{background:#febc2e}.g{background:#28c840}
-    .window-body{aspect-ratio:16/8;display:grid;place-items:center;background:radial-gradient(60% 60% at 70% 20%,#eef4ff 0%,#ffffff 70%);}
-    .window-body h2{margin:0;font-size:clamp(22px,3.2vw,30px);letter-spacing:-.3px}
-    /* Sections */
-    section{padding:68px 0;border-top:1px solid var(--line)}
-    .head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;margin-bottom:34px}
-    .head h3{margin:0;font-size:clamp(22px,3vw,28px)}
-    .muted{color:var(--muted)}
-    .grid{display:grid;gap:18px}
-    .cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    @media(max-width:980px){.cols-3{grid-template-columns:1fr 1fr}}
-    @media(max-width:720px){.cols-3,.cols-2{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
-    .card:hover{transform:translateY(-4px);box-shadow:var(--shadow);background:#fff}
-    .shot{aspect-ratio:16/10;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(135deg,#f3f7ff 0%,#ffffff 40%),radial-gradient(70% 80% at 85% 15%,#e8f1ff 0%,transparent 60%);position:relative}
-    .shot::after{content:"Demo";position:absolute;inset:auto 12px 12px auto;padding:.35rem .6rem;background:#fff;border:1px solid var(--line);border-radius:999px;color:#475569;font-size:.85rem}
-    /* Pricing */
-    .price{display:flex;align-items:baseline;gap:6px;margin:8px 0 0}.big{font-size:2rem;font-weight:800}.per{color:var(--muted)}
-    /* FAQ */
-    details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;transition:box-shadow .2s ease}
-    details:hover{box-shadow:var(--shadow)} summary{cursor:pointer;font-weight:700}
-    /* Footer */
-    footer{padding:46px 0 70px}
-    .footer-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-    .small{font-size:.92rem;color:var(--muted)}
-    /* Motion */
-    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-    .reveal{opacity:0;transform:translateY(10px)}
-    .reveal.show{opacity:1;transform:none;animation:fadeUp .6s ease both}
-    @media(prefers-reduced-motion:reduce){.reveal,.reveal.show{animation:none;opacity:1;transform:none}}
+
+    header {
+      background: linear-gradient(160deg, var(--dark) 0%, #122b4b 100%);
+      color: var(--light);
+      text-align: center;
+      padding: 120px 20px 100px;
+    }
+
+    header h1 {
+      font-size: clamp(32px, 4vw, 54px);
+      margin-bottom: 10px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #d0d6e1;
+      margin-bottom: 30px;
+    }
+
+    .cta-btn {
+      background: var(--gold);
+      color: var(--dark);
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .cta-btn:hover {
+      background: #d6b867;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 24px;
+    }
+    @media (min-width: 720px) {
+      .grid.cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .card {
+      background: #f9fafb;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+    .card:hover {
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transform: translateY(-3px);
+    }
+
+    .card h3 {
+      color: var(--dark);
+      margin-top: 10px;
+      margin-bottom: 8px;
+    }
+    .card p {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    /* Contact Form */
+    form {
+      background: #f8f9fa;
+      padding: 40px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      transition: 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--gold);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(198,167,91,0.25);
+    }
+
+    button {
+      width: 100%;
+      background: var(--dark);
+      color: var(--light);
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 999px;
+      padding: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #132b49;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: var(--dark);
+      color: #d4dae3;
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 0.9rem;
+    }
+    footer strong {
+      color: var(--gold);
+    }
   </style>
 </head>
-<body>
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a href="#top" class="brand"><span class="logo" aria-hidden="true"></span><span>Web Brothers</span></a>
-      <div class="links">
-        <a href="#why">למה אנחנו</a>
-        <a href="#work">תבניות</a>
-        <a href="#pricing">מחירון</a>
-        <a href="#faq">שאלות</a>
-        <a href="#contact">צור קשר</a>
-      </div>
-      <a class="cta" id="ctaTop" href="#">וואטסאפ</a>
-    </div>
-  </nav>
 
-  <!-- HERO -->
-  <header id="top" class="hero container">
-    <span class="badge reveal">תוך 48 שעות • עיצוב נקי</span>
-    <h1 class="reveal" style="animation-delay:.05s">דפי נחיתה שמרגישים פרימיום — בלי כאב ראש</h1>
-    <p class="sub reveal" style="animation-delay:.1s">אנחנו ב־Web Brothers בונים דפי נחיתה חדים, נקיים ומהירים לעסקים. עיצוב בסגנון Apple, ביצועים מצוינים, והמרות גבוהות.</p>
-    <div class="actions reveal" style="animation-delay:.15s">
-      <a class="btn primary" id="ctaHero" href="#">דברו איתנו בוואטסאפ</a>
-      <a class="btn ghost" href="#work">צפו בתבניות</a>
-    </div>
-    <div class="showcase reveal" style="animation-delay:.2s">
-      <div class="window">
-        <div class="window-top"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
-        <div class="window-body"><h2>מינימום רעש, מקסימום תוצאה</h2></div>
-      </div>
-    </div>
+<body>
+  <header>
+    <h1>כהן & נוימן</h1>
+    <p>משרד עורכי דין המתמחה בייצוג משפטי אמין, מקצועי ודיסקרטי</p>
+    <button class="cta-btn" id="whatsappHeader">דברו איתנו עכשיו</button>
   </header>
 
-  <!-- WHY -->
+  <section id="services">
+    <h2>תחומי התמחות</h2>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>דיני עבודה</h3>
+        <p>ייצוג עובדים ומעסיקים בתביעות שכר, פיטורים ודיני עבודה.</p>
+      </div>
+      <div class="card">
+        <h3>מקרקעין ונדל״ן</h3>
+        <p>ייעוץ וליווי עסקאות נדל״ן, חוזי שכירות ורישום זכויות.</p>
+      </div>
+      <div class="card">
+        <h3>נזיקין וביטוח</h3>
+        <p>תביעות נזיקין, פגיעות גוף ותאונות עבודה מול חברות ביטוח.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="why">
-    <div class="container">
-      <div class="head"><h3 class="reveal">למה לבחור בנו?</h3><p class="muted reveal" style="max-width:720px">מהירות, עיצוב מדויק, ותהליך פשוט ושקוף.</p></div>
-      <div class="grid cols-3">
-        <div class="card reveal"><h4>48 שעות</h4><p class="muted">תהליך מרוכז עם ספריית רכיבים מוכנה.</p></div>
-        <div class="card reveal" style="animation-delay:.05s"><h4>עיצוב מודרני</h4><p class="muted">טיפוגרפיה נקייה והיררכיה ברורה.</p></div>
-        <div class="card reveal" style="animation-delay:.1s"><h4>מוכן להמרה</h4><p class="muted">כפתורי CTA ברורים ואנימציות עדינות.</p></div>
+    <h2>מדוע לבחור בנו</h2>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>ניסיון של מעל עשור</h3>
+        <p>ייצוג מאות לקוחות בבתי משפט ובבוררויות בכל רחבי הארץ.</p>
+      </div>
+      <div class="card">
+        <h3>יחס אישי וליווי צמוד</h3>
+        <p>שירות דיסקרטי ומענה מהיר לכל לקוח, בכל שלב בתהליך.</p>
+      </div>
+      <div class="card">
+        <h3>מקצועיות בלתי מתפשרת</h3>
+        <p>שקיפות מלאה, מצוינות משפטית ופתרונות יצירתיים.</p>
       </div>
     </div>
   </section>
 
-  <!-- WORK -->
-  <section id="work">
-    <div class="container">
-      <div class="head"><h3 class="reveal">תבניות לדוגמה</h3><p class="muted reveal" style="max-width:720px">נחליף לצילומי מסך אמיתיים בהמשך.</p></div>
-      <div class="grid cols-3">
-        <div class="card reveal"><div class="shot"></div><h4>Minimal</h4><p class="muted">דף לבן אלגנטי עם כותרת אחת חדה.</p></div>
-        <div class="card reveal" style="animation-delay:.05s"><div class="shot"></div><h4>Product</h4><p class="muted">מיקוד במוצר יחיד עם הוכחות חברתיות.</p></div>
-        <div class="card reveal" style="animation-delay:.1s"><div class="shot"></div><h4>Event</h4><p class="muted">דף הרשמה עם שעון ספירה לאירוע.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section id="pricing">
-    <div class="container">
-      <div class="head"><h3 class="reveal">מחירון שקוף</h3><p class="muted reveal" style="max-width:720px">כל החבילות כוללות התאמה לנייד, חיבור וואטסאפ ו־SEO בסיסי.</p></div>
-      <div class="grid cols-3">
-        <div class="card reveal">
-          <h4>Basic</h4><p class="muted">דף אחד</p>
-          <div class="price"><span class="big">₪790</span><span class="per">+ מע״מ</span></div>
-        </div>
-        <div class="card reveal" style="animation-delay:.05s">
-          <h4>Business</h4><p class="muted">דף + וריאציה</p>
-          <div class="price"><span class="big">₪1,490</span><span class="per">+ מע״מ</span></div>
-        </div>
-        <div class="card reveal" style="animation-delay:.1s">
-          <h4>Premium</h4><p class="muted">עיצוב מותאם אישית</p>
-          <div class="price"><span class="big">₪2,490</span><span class="per">+ מע״מ</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="container">
-      <div class="head"><h3 class="reveal">שאלות נפוצות</h3><p class="muted reveal" style="max-width:720px">וגם התשובות.</p></div>
-      <div class="grid cols-2">
-        <details class="reveal"><summary>איך מספקים דף בשני ימים?</summary><p class="muted">תהליך סגור עם רכיבים מוכנים וסקיצה מהירה.</p></details>
-        <details class="reveal" style="animation-delay:.05s"><summary>מי כותב את הטקסט?</summary><p class="muted">אפשר להביא טקסט, או שנציע נוסחים קצרים.</p></details>
-        <details class="reveal" style="animation-delay:.1s"><summary>אפשר חיבור לפיקסל?</summary><p class="muted">כן, נשלב קודים של Meta/Google לפי בקשה.</p></details>
-        <details class="reveal" style="animation-delay:.15s"><summary>מה לגבי עיצוב לוגו?</summary><p class="muted">כולל לוגו בסיסי לשימוש מיידי (שחור/לבן).</p></details>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT (WhatsApp Form only) -->
   <section id="contact">
-    <div class="container">
-      <div class="head"><h3 class="reveal">יש לכם פרויקט? נתחיל בוואטסאפ</h3><p class="muted reveal" style="max-width:720px">ממלאים ותוך רגע אנחנו איתכם בצ'אט.</p></div>
+    <h2>יצירת קשר</h2>
+    <form id="contactForm">
+      <label for="name">שם מלא</label>
+      <input type="text" id="name" required placeholder="לדוגמה: דניאל לוי">
 
-      <form id="waForm" class="card" style="max-width:680px;margin:0 auto">
-        <div class="grid cols-2">
-          <div>
-            <label for="name"><strong>שם מלא</strong></label>
-            <input id="name" required placeholder="לדוגמה: עומר לוי">
-          </div>
-          <div>
-            <label for="phone"><strong>טלפון</strong></label>
-            <input id="phone" required placeholder="0501234567" inputmode="tel">
-          </div>
-          <div>
-            <label for="type"><strong>חבילה</strong></label>
-            <select id="type" required>
-              <option value="Basic">Basic</option>
-              <option value="Business">Business</option>
-              <option value="Premium">Premium</option>
-            </select>
-          </div>
-          <div>
-            <label for="biz"><strong>שם העסק</strong> <span class="muted">(לא חובה)</span></label>
-            <input id="biz" placeholder="Web Brothers">
-          </div>
-        </div>
-        <div style="margin-top:12px">
-          <label for="notes"><strong>הערות</strong> <span class="muted">(לא חובה)</span></label>
-          <textarea id="notes" rows="4" placeholder="ספרו לנו בקצרה מה אתם צריכים"></textarea>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end;margin-top:16px">
-          <a class="btn" href="#top">חזור למעלה</a>
-          <button class="btn primary" type="submit">פתיחת וואטסאפ ✅</button>
-        </div>
-      </form>
-    </div>
+      <label for="phone">טלפון</label>
+      <input type="tel" id="phone" required placeholder="0501234567">
+
+      <label for="topic">נושא הפנייה</label>
+      <select id="topic" required>
+        <option value="ייעוץ משפטי">ייעוץ משפטי</option>
+        <option value="ייצוג בבית משפט">ייצוג בבית משפט</option>
+        <option value="חוזים והסכמים">חוזים והסכמים</option>
+      </select>
+
+      <label for="message">פרטים נוספים (לא חובה)</label>
+      <textarea id="message" rows="4" placeholder="תארו בקצרה את המקרה או השאלה שלכם..."></textarea>
+
+      <button type="submit">שלח דרך וואטסאפ</button>
+    </form>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <div class="container footer-inner">
-      <div><div class="brand"><span class="logo"></span><strong>Web Brothers</strong></div>
-        <p class="small">© 2025 — אופק ותומר. דפי נחיתה חדים ומהירים.</p>
-      </div>
-      <div class="small">
-        <a href="#why">למה אנחנו</a> · <a href="#work">תבניות</a> · <a href="#pricing">מחירון</a> · <a href="#faq">שאלות</a>
-      </div>
-    </div>
+    <p><strong>כהן & נוימן</strong> — משרד עורכי דין</p>
+    <p>© 2025 כל הזכויות שמורות • טלפון: 050-9658400 • מייל: info@law.co.il</p>
   </footer>
 
   <script>
-    // Reveal on scroll
-    const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    const WHATSAPP = "9720509658400"; // ניתן לשנות למספר הלקוח שלך
 
-    // Build WhatsApp link
-    const WHATSAPP_NUMBER = "9720509658400"; // ← המספר שלך (ללא 0 בתחילת הקידומת הישראלית)
-    function normalizeIL(phone){
-      // שמירה על ספרות בלבד + המרה ל־972
-      const digits = (phone||"").replace(/\D/g,"");
-      if(digits.startsWith("972")) return digits;
-      if(digits.startsWith("0")) return "972"+digits.slice(1);
-      return digits.length===9 ? "972"+digits : digits;
+    function sendToWhatsApp(name, phone, topic, message) {
+      const text = encodeURIComponent(`שלום, אני ${name} (${phone})\nנושא הפנייה: ${topic}\n${message ? "פרטים נוספים: " + message : ""}`);
+      window.open(`https://wa.me/${WHATSAPP}?text=${text}`, "_blank");
     }
-    function waMessage({name, phone, type, biz, notes}){
-      return encodeURIComponent(
-        `היי Web Brothers! אני ${name}${biz? " ("+biz+")":""}.\n`+
-        `טלפון: ${phone}\nחבילה: ${type}\n`+
-        (notes?`הערות: ${notes}\n`:"")+
-        `בואו נתחיל :)`
-      );
-    }
-    function waLink(msg){ return `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}` }
 
-    // Top buttons
-    document.getElementById('ctaTop').onclick=(e)=>{e.preventDefault();window.open(waLink(encodeURIComponent("היי! רוצה דף נחיתה תוך 48 שעות.")),'_blank')}
-    document.getElementById('ctaHero').onclick=(e)=>{e.preventDefault();window.open(waLink(encodeURIComponent("שלום! מעוניין/ת בדף נחיתה.")),'_blank')}
-
-    // Form submit
-    document.getElementById('waForm').addEventListener('submit', (e)=>{
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
       e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const phone = normalizeIL(document.getElementById('phone').value.trim());
-      const type = document.getElementById('type').value;
-      const biz  = document.getElementById('biz').value.trim();
-      const notes= document.getElementById('notes').value.trim();
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const topic = document.getElementById("topic").value;
+      const message = document.getElementById("message").value.trim();
+      sendToWhatsApp(name, phone, topic, message);
+      this.reset();
+    });
 
-      if(!name || phone.length < 10){
-        alert("בדקו שהשם מלא והטלפון תקין ;(למשל 0501234567).");
-        return;
-      }
-      const msg = waMessage({name, phone, type, biz, notes});
-      window.open(waLink(msg), "_blank");
+    document.getElementById("whatsappHeader").addEventListener("click", function() {
+      const text = encodeURIComponent("שלום, אני מעוניין בשירות משפטי.");
+      window.open(`https://wa.me/${WHATSAPP}?text=${text}`, "_blank");
     });
   </script>
 </body>
