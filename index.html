@@ -114,7 +114,7 @@
       const notes = document.getElementById("notes").value.trim();
 
       try {
-        const response = await fetch("https://ofekn.app.n8n.cloud/webhook/webbrothers", {
+        const response = await fetch("https://corsproxy.io/?" + encodeURIComponent("https://ofekn.app.n8n.cloud/webhook/webbrothers"), {
           method: "POST",
           headers: { 
             "Content-Type": "application/json",
