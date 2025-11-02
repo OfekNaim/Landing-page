@@ -1,155 +1,387 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Brothers - בניית אתרים תוך 7 ימים</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Brothers — בניית אתרים מודרניים תוך 7 ימים</title>
+  <meta name="description" content="Web Brothers - בניית אתרים מודרניים לעסקים קטנים ובינוניים תוך 7 ימים + עיצוב לוגו.">
+  <meta name="theme-color" content="#ffffff" />
+  <meta property="og:title" content="Web Brothers — בניית אתרים תוך 7 ימים">
+  <meta property="og:description" content="אתר מודרני, מהיר ומדויק תוך שבוע. כולל עיצוב לוגו.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
-    body {
-      margin: 0;
-      font-family: 'Rubik', sans-serif;
-      background-color: #fff;
-      color: #111;
-      line-height: 1.6;
+    :root{
+      --bg:#ffffff;
+      --text:#0b0b0c;
+      --muted:#6b7280;
+      --line:#eceff3;
+      --ink:#111113;
+      --accent:#0b84ff;
+      --accent-2:#0a66ff;
+      --card:#f7f8fa;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.06);
     }
-    header {
-      text-align: center;
-      padding: 60px 20px 40px;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;background:var(--bg);color:var(--text);
+      font-family: Heebo, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Hebrew", "Helvetica Neue", Arial, sans-serif;
+      line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     }
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      letter-spacing: -1px;
-      margin-bottom: 10px;
+    .container{max-width:1150px;margin:0 auto;padding-inline:20px}
+    a{color:inherit;text-decoration:none}
+    /* Nav */
+    .nav{
+      position:sticky;top:0;z-index:50;background:rgba(255,255,255,.75);
+      backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)
     }
-    header p {
-      font-size: 1.2rem;
-      color: #555;
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.3px}
+    .logo{
+      inline-size:34px; block-size:34px; border-radius:10px;
+      background: radial-gradient(120% 120% at 70% 10%, #cde7ff 0%, #eaf2ff 40%, #fff 60%);
+      border:1px solid var(--line); box-shadow:var(--shadow);
     }
-
-    .cta {
-      display: inline-block;
-      background-color: #000;
-      color: #fff;
-      padding: 14px 32px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 500;
-      margin-top: 30px;
-      transition: all 0.3s ease;
+    .nav-links{display:flex;gap:22px}
+    .nav-links a{color:#3b3f45;font-weight:500}
+    .nav-cta{
+      display:inline-flex;align-items:center;gap:10px;
+      background:var(--ink);color:#fff;padding:.65rem 1rem;border-radius:999px;
+      font-weight:600;transition:transform .2s ease, opacity .2s ease
     }
-    .cta:hover {
-      background-color: #222;
-      transform: scale(1.05);
+    .nav-cta:hover{transform:translateY(-1px);opacity:.95}
+    /* Hero */
+    .hero{padding:88px 0 40px}
+    .hero h1{
+      font-size:clamp(32px,5vw,54px);line-height:1.12;margin:0 0 10px;letter-spacing:-.7px
     }
-
-    section {
-      padding: 80px 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
+    .sub{
+      color:var(--muted);font-size:clamp(16px,2.2vw,18px);max-width:720px;margin:0 auto 26px
     }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
+    .hero .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;border-radius:999px;font-weight:600;border:1px solid var(--line);
+      padding:.9rem 1.3rem;transition:transform .18s ease, box-shadow .18s ease, background .18s ease
     }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-top: 40px;
+    .btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .btn.primary:hover{transform:translateY(-1px)}
+    .btn.ghost{background:#fff}
+    .badge{
+      display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.35rem .7rem;font-size:.85rem;color:#475569;background:#fff
     }
-    .feature {
-      background: #f9f9f9;
-      padding: 40px 20px;
-      border-radius: 16px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Showcase */
+    .showcase{
+      margin-top:34px;border:1px solid var(--line);border-radius:calc(var(--radius) + 6px);
+      padding:14px;background:linear-gradient(180deg,#fcfdff, #f7f9ff 45%, #ffffff 100%); box-shadow:var(--shadow)
     }
-    .feature:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    .window{
+      border:1px solid var(--line); border-radius:12px; overflow:hidden; background:#fff
     }
-    .feature h3 {
-      margin-bottom: 10px;
-      font-size: 1.3rem;
+    .window-top{
+      display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid var(--line);background:#fafbff
     }
-    .feature p {
-      color: #555;
-      font-size: 1rem;
+    .dot{inline-size:10px;block-size:10px;border-radius:999px}
+    .dot.r{background:#ff5f57}.dot.y{background:#febc2e}.dot.g{background:#28c840}
+    .window-body{
+      aspect-ratio: 16/8; display:grid; place-items:center; background:
+        radial-gradient(60% 60% at 70% 20%, #eef4ff 0%, #ffffff 70%);
     }
-
-    .whatsapp {
-      position: fixed;
-      bottom: 30px;
-      left: 30px;
-      background-color: #25D366;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-      z-index: 10;
+    .window-body h2{
+      margin:0;font-size:clamp(22px,3.2vw,30px);letter-spacing:-.3px
     }
-    .whatsapp:hover {
-      transform: scale(1.1);
+    /* Sections */
+    section{padding:68px 0;border-top:1px solid var(--line)}
+    .section-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;margin-bottom:34px}
+    .section-head h3{margin:0;font-size:clamp(22px,3vw,28px);letter-spacing:-.2px}
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:18px}
+    .grid.cols-3{grid-template-columns: repeat(3, minmax(0, 1fr))}
+    .grid.cols-2{grid-template-columns: repeat(2, minmax(0, 1fr))}
+    @media (max-width:980px){.grid.cols-3{grid-template-columns:1fr 1fr}}
+    @media (max-width:720px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
+    .card{
+      background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+      padding:22px; text-align:inherit; transition:transform .2s ease, box-shadow .2s ease, background .2s ease
     }
-    .whatsapp img {
-      width: 34px;
-      height: 34px;
+    .card:hover{transform:translateY(-4px); box-shadow:var(--shadow); background:#fff}
+    .card h4{margin:0 0 6px;font-size:1.1rem}
+    .chip{display:inline-block;font-size:.85rem;color:#334155;border:1px solid var(--line);background:#fff;padding:.3rem .6rem;border-radius:999px}
+    .num{font-weight:700;color:#0b84ff}
+    /* Portfolio placeholders */
+    .shot{aspect-ratio: 16/10; border-radius:12px; overflow:hidden; border:1px solid var(--line); background:
+      linear-gradient(135deg,#f3f7ff 0%,#ffffff 40%), radial-gradient(70% 80% at 85% 15%, #e8f1ff 0%, transparent 60%);
+      position:relative;
     }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 0.9rem;
-      color: #777;
-      background-color: #fafafa;
+    .shot::after{
+      content:"תצוגת דמו"; position:absolute; inset:auto 12px 12px auto; padding:.35rem .6rem; background:#fff;
+      border:1px solid var(--line); border-radius:999px; color:#475569; font-size:.85rem
     }
+    /* Pricing */
+    .price{
+      display:flex; align-items:baseline; gap:6px; margin:8px 0 0;
+    }
+    .price .big{font-size:2rem; font-weight:800}
+    .price .per{color:var(--muted)}
+    /* FAQ */
+    details{
+      background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;transition:box-shadow .2s ease;background-clip:padding-box
+    }
+    details:hover{box-shadow:var(--shadow)}
+    summary{cursor:pointer;font-weight:600}
+    details[open]{background:#fff}
+    /* Footer */
+    footer{padding:46px 0 70px}
+    .footer-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+    .small{font-size:.92rem;color:var(--muted)}
+    /* WhatsApp FAB */
+    .fab{
+      position:fixed; inset:auto 26px 26px auto; inline-size:58px; block-size:58px; border-radius:999px;
+      display:grid; place-items:center; background:#25d366; color:#fff; box-shadow:var(--shadow); z-index:60;
+      transition:transform .2s ease
+    }
+    .fab:hover{transform:scale(1.05)}
+    .fab svg{inline-size:28px; block-size:28px; fill:#fff}
+    /* Motion */
+    @keyframes fadeUp{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none}}
+    .reveal{opacity:0; transform:translateY(10px)}
+    .reveal.show{opacity:1; transform:none; animation: fadeUp .6s ease both}
+    @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto} .reveal, .reveal.show{animation:none; opacity:1; transform:none}}
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Web Brothers</h1>
-    <p>אנחנו בונים אתרים מודרניים לעסקים קטנים ובינוניים תוך 7 ימים</p>
-    <a href="https://wa.me/972501234567" target="_blank" class="cta">דברו איתנו בוואטסאפ ונתחיל עוד היום</a>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <span class="logo" aria-hidden="true"></span>
+        <span>Web Brothers</span>
+      </a>
+      <div class="nav-links">
+        <a href="#why">למה אנחנו</a>
+        <a href="#work">עבודות</a>
+        <a href="#process">תהליך</a>
+        <a href="#pricing">מחירון</a>
+        <a href="#faq">שאלות</a>
+      </div>
+      <a class="nav-cta" id="ctaTop" href="#" aria-label="ווטסאפ">דברו איתנו</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="hero container">
+    <p class="badge reveal">תוך 7 ימים • כולל עיצוב לוגו</p>
+    <h1 class="reveal" style="animation-delay:.05s">
+      אתרים מודרניים, נקיים ומהירים — <span style="background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent">בשבוע אחד</span>
+    </h1>
+    <p class="sub reveal" style="animation-delay:.1s">
+      אנחנו ב־Web Brothers בונים חוויות רשת מדויקות לעסקים קטנים ובינוניים — ביצועים גבוהים, עיצוב ברמה של מותגי־על, ותהליך פשוט ומהיר.
+    </p>
+    <div class="actions reveal" style="animation-delay:.15s">
+      <a class="btn primary" id="ctaHero" href="#">דברו איתנו בוואטסאפ ונתחיל עוד היום</a>
+      <a class="btn ghost" href="#work" aria-label="צפו בעבודות">צפו בעבודות</a>
+    </div>
+
+    <div class="showcase reveal" style="animation-delay:.2s">
+      <div class="window">
+        <div class="window-top">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        </div>
+        <div class="window-body">
+          <h2>דמו נקי בסגנון Apple — בלי רעש, רק תוצאה</h2>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <section>
-    <h2>למה לבחור ב־Web Brothers?</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>מהירות שיא</h3>
-        <p>אתר מושלם תוך 7 ימים בלבד — בלי פשרות על איכות או עיצוב.</p>
+  <!-- WHY US -->
+  <section id="why">
+    <div class="container">
+      <div class="section-head">
+        <h3 class="reveal">למה לבחור ב־Web Brothers?</h3>
+        <p class="muted reveal" style="max-width:720px">שקיפות, איכות ומהירות. שילוב שמחזיר לכם זמן ונותן שקט.</p>
       </div>
-      <div class="feature">
-        <h3>עיצוב מודרני</h3>
-        <p>עיצוב בהשראת המותגים הגדולים בעולם — נקי, ברור וממותג.</p>
-      </div>
-      <div class="feature">
-        <h3>מיתוג ולוגו</h3>
-        <p>בנוסף לבניית האתר, אנחנו מעצבים גם לוגו חדש לעסק שלך.</p>
+      <div class="grid cols-3">
+        <div class="card reveal">
+          <h4>מהירות שיא</h4>
+          <p class="muted">מאתחול לאוויר תוך 7 ימים — תכנון זריז, פיתוח יעיל והשקה נקייה.</p>
+        </div>
+        <div class="card reveal" style="animation-delay:.05s">
+          <h4>עיצוב מודרני</h4>
+          <p class="muted">ויז'ואל מינימליסטי, היררכיית מידע חדה וטיפוגרפיה מדויקת.</p>
+        </div>
+        <div class="card reveal" style="animation-delay:.1s">
+          <h4>מיתוג ולוגו</h4>
+          <p class="muted">כולל עיצוב לוגו וקו גרפי ראשוני שמרגיש פרימיום.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2>איך זה עובד?</h2>
-    <p>מדברים איתנו בוואטסאפ → שולחים פרטים בסיסיים → תוך שבוע יש לכם אתר מוכן להעלות לאוויר.</p>
-    <a href="https://wa.me/972501234567" target="_blank" class="cta">שלחו לנו הודעה עכשיו</a>
+  <!-- WORK -->
+  <section id="work">
+    <div class="container">
+      <div class="section-head">
+        <h3 class="reveal">מבחר עבודות</h3>
+        <p class="muted reveal" style="max-width:720px">מקטעי דמו — נחליף לצילומי מסך של אתרים אמיתיים כשיהיו מוכנים.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card reveal"><div class="shot"></div><h4>אתר מותג אופנה</h4><p class="muted">חנות נקייה עם דגש על טיפוגרפיה.</p></div>
+        <div class="card reveal" style="animation-delay:.05s"><div class="shot"></div><h4>אתר סטארטאפ B2B</h4><p class="muted">דף שיווק חד עם ביצועים מעולים.</p></div>
+        <div class="card reveal" style="animation-delay:.1s"><div class="shot"></div><h4>דף נחיתה לאירוע</h4><p class="muted">המרה גבוהה ותוכן מדויק.</p></div>
+      </div>
+    </div>
   </section>
 
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="container">
+      <div class="section-head">
+        <h3 class="reveal">איך זה עובד</h3>
+        <p class="muted reveal" style="max-width:720px">תהליך קצר וברור — כדי שתדעו בכל רגע איפה זה עומד.</p>
+      </div>
+      <div class="grid cols-2">
+        <div class="card reveal">
+          <h4><span class="num">01</span> שיחה קצרה & בריף</h4>
+          <p class="muted">וואטסאפ/זום לדיוק מטרות, שפה גרפית ותוכן.</p>
+        </div>
+        <div class="card reveal" style="animation-delay:.05s">
+          <h4><span class="num">02</span> סקיצה & קו עיצובי</h4>
+          <p class="muted">מסכים מרכזיים, טיפוגרפיה ופלטת צבעים.</p>
+        </div>
+        <div class="card reveal" style="animation-delay:.1s">
+          <h4><span class="num">03</span> פיתוח & אופטימיזציה</h4>
+          <p class="muted">קוד נקי, SEO בסיסי, ביצועים ו־Accessibility.</p>
+        </div>
+        <div class="card reveal" style="animation-delay:.15s">
+          <h4><span class="num">04</span> השקה & ליווי</h4>
+          <p class="muted">עלייה לאוויר + תמיכה בשבוע הראשון.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="container">
+      <div class="section-head">
+        <h3 class="reveal">מחירון שקוף</h3>
+        <p class="muted reveal" style="max-width:720px">כל חבילה כוללת אתר רספונסיבי, אנימציות עדינות, חיבור וואטסאפ ו־SEO בסיסי.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card reveal">
+          <h4>Landing Starter</h4>
+          <p class="muted">עד 1–2 מסכים</p>
+          <div class="price"><span class="big">₪2,490</span><span class="per">+ מע״מ</span></div>
+          <p class="muted">זמן אספקה: עד 5 ימים</p>
+        </div>
+        <div class="card reveal" style="animation-delay:.05s">
+          <h4>Business Site</h4>
+          <p class="muted">עד 5 עמודים</p>
+          <div class="price"><span class="big">₪5,900</span><span class="per">+ מע״מ</span></div>
+          <p class="muted">זמן אספקה: עד 7–10 ימים</p>
+        </div>
+        <div class="card reveal" style="animation-delay:.1s">
+          <h4>E-Commerce</h4>
+          <p class="muted">חנות בסיסית</p>
+          <div class="price"><span class="big">₪8,900</span><span class="per">+ מע״מ</span></div>
+          <p class="muted">כולל סליקה וחיבור קטלוג</p>
+        </div>
+      </div>
+      <p class="muted" style="text-align:center;margin-top:10px">צריך חבילה אחרת? <a href="#contact" style="text-decoration:underline">דברו איתנו</a>.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-head">
+        <h3 class="reveal">שאלות נפוצות</h3>
+        <p class="muted reveal" style="max-width:720px">קיצרנו את התשובות כדי שיהיה ברור.</p>
+      </div>
+      <div class="grid cols-2">
+        <details class="reveal"><summary>איך תכל׳ס מספקים אתר בשבוע?</summary><p class="muted">תהליך מרוכז, תבניות בסיס מותאמות, וסשן החלטות מהיר בתחילת הדרך.</p></details>
+        <details class="reveal" style="animation-delay:.05s"><summary>מה לגבי תוכן ותמונות?</summary><p class="muted">נוכל לעבוד עם מה שיש, או להציע בנק תמונות/כתיבה מהירה.</p></details>
+        <details class="reveal" style="animation-delay:.1s"><summary>איזו מערכת תעדיפו?</summary><p class="muted">HTML סטטי, או Shopify/WP לפי הצורך. נמליץ לפי סוג העסק.</p></details>
+        <details class="reveal" style="animation-delay:.15s"><summary>מה כולל העיצוב לוגו?</summary><p class="muted">סמל־טקסט נקי + וריאציות צבע/שחור־לבן לשימושים מיידיים.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h3 class="reveal">יש לכם פרויקט? בואו נתחיל</h3>
+        <p class="muted reveal" style="max-width:720px">שלחו הודעת וואטסאפ ונחזור אליכם עם סקיצה ראשונית.</p>
+      </div>
+      <div class="grid cols-2">
+        <div class="card reveal">
+          <h4>וואטסאפ</h4>
+          <p class="muted">הדרך המהירה ביותר להתחיל.</p>
+          <a class="btn primary" id="ctaContact" href="#">פתחו וואטסאפ</a>
+        </div>
+        <div class="card reveal" style="animation-delay:.05s">
+          <h4>אימייל</h4>
+          <p class="muted">webbrothers@example.com</p>
+          <span class="chip">זמן תגובה: עד שעתיים</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    © 2025 Web Brothers — כל הזכויות שמורות. נבנה באהבה על ידי אופק ותומר 💻
+    <div class="container footer-inner">
+      <div>
+        <div class="brand"><span class="logo"></span><strong>Web Brothers</strong></div>
+        <p class="small">© 2025 — אופק ותומר. אתרים נקיים, מהירים וחדים.</p>
+      </div>
+      <div class="small">
+        <a href="#why">למה אנחנו</a> · <a href="#work">עבודות</a> · <a href="#pricing">מחירון</a> · <a href="#faq">שאלות</a>
+      </div>
+    </div>
   </footer>
 
-  <a href="https://wa.me/972501234567" target="_blank" class="whatsapp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  <!-- WhatsApp FAB -->
+  <a class="fab" id="fab" href="#" aria-label="צ׳אט וואטסאפ">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.35c-.27-.14-1.58-.79-1.83-.88-.25-.09-.43-.14-.62.14-.19.27-.71.88-.87 1.06-.16.18-.32.2-.6.07-.27-.14-1.15-.42-2.19-1.34-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.19-.27.29-.46.09-.18.05-.34-.02-.48-.07-.14-.62-1.5-.85-2.05-.22-.53-.45-.46-.62-.47l-.53-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.99 2.66 1.13 2.85.14.18 1.95 2.98 4.73 4.06.66.29 1.18.46 1.58.58.66.21 1.26.18 1.73.11.53-.08 1.58-.64 1.8-1.25.22-.62.22-1.14.15-1.25-.06-.11-.24-.18-.51-.32zM16 3C9.37 3 4 8.37 4 15c0 2.12.56 4.11 1.55 5.83L4 29l8.33-1.46C14 28.52 15 28.64 16 28.64 22.63 28.64 28 23.27 28 16.64S22.63 3 16 3z"/></svg>
   </a>
 
+  <script>
+    // 1) Reveal on scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }});
+    },{threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // 2) WhatsApp links — set your number here (no dashes, intl format)
+    const WHATSAPP_NUMBER = document.body.dataset?.whatsapp || "972501234567"; // ← החלף כאן
+    function waLink(msg){
+      const base = "https://wa.me/"+WHATSAPP_NUMBER;
+      const text = encodeURIComponent(msg || "היי Web Brothers, אשמח להתחיל בעיצוב האתר!");
+      return base + "?text=" + text;
+    }
+    const links = [
+      ["ctaTop","היי, מעוניין/ת באתר תוך 7 ימים + לוגו."],
+      ["ctaHero","היי! בואו נתחיל — מה השלב הבא?"],
+      ["ctaContact","שלום! צריך ייעוץ קצר לגבי אתר חדש."]
+    ];
+    links.forEach(([id,msg])=>{
+      const el = document.getElementById(id);
+      if(el){ el.href = waLink(msg); el.target = "_blank"; el.rel="noopener"; }
+    });
+    const fab = document.getElementById('fab');
+    if(fab){ fab.href = waLink("היי, אפשר התקדמות מהירה?"); fab.target="_blank"; fab.rel="noopener"; }
+
+    // 3) Smooth hash scroll offset for sticky nav (optional)
+    // (already using CSS smooth scroll)
+
+  </script>
+  <!-- To set number without editing JS: <body data-whatsapp="9725XXXXXXX"> -->
 </body>
 </html>
